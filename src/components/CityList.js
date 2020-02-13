@@ -48,10 +48,10 @@ const CityList = (props) => {
         <TableBody>
           {props.userList.map((item, index) => (
             <TableRow key={index}>
-              <TableCell className={classes.tablecell} component="th" scope="item">
+              <TableCell data-testid='cityTest' className={classes.tablecell} component="th" scope="item">
                 {item.city}
               </TableCell>
-              <TableCell className={classes.tablecell} align="right">{item.temp}&#8451;</TableCell>
+              <TableCell data-testid='tempTest' className={classes.tablecell} align="right">{item.temp}&#8451;</TableCell>
               <TableCell className={classes.tablecell} align="right"><img src={item.icon}/></TableCell>
               <TableCell className={classes.tablecell} align="right">
                 <IconButton aria-label="delete" color="secondary" onClick={() => props.deleteItem(index)}>

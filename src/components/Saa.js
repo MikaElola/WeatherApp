@@ -18,8 +18,8 @@ searchCity = (event) => {
 
 //tähän tehdä try catch ettei haeta tyhjää nyt breikkaa...
 searchWeather = () => {
-  var city = this.state.userSearch
-  fetch('http://api.openweathermap.org/data/2.5/weather?q='+city+'&units=metric&APPID=0707345a482e92b1b0e9043d2a6df184')
+  let serCity = this.state.userSearch
+  fetch('http://api.openweathermap.org/data/2.5/weather?q='+serCity+'&units=metric&APPID=0707345a482e92b1b0e9043d2a6df184')
   .then((response) => {
   if(response.ok){
     return response.json()
@@ -78,10 +78,10 @@ deleteItem = (index) => {
             <WbSunnyIcon id="searchbtn" fontSize="large" />
           </IconButton>
           <div className="resultsContainer">
-            <div className="results"><h3>{this.state.city}</h3></div>
-          <div className="results">Temperature: {this.state.temp}&#8451;</div>
-          <div className="results">Weather: {this.state.weat}</div>
-          <div className="results"><img src={this.state.icon}/></div>
+            <div data-testid='cityTest' className="results"><h3>{this.state.city}</h3></div>
+          <div data-testid='tempTest' className="results">Temperature: {this.state.temp}&#8451;</div>
+          <div data-testid='weatTest' className="results">Weather: {this.state.weat}</div>
+          <div data-testid='iconTest' className="results"><img src={this.state.icon}/></div>
           <IconButton aria-label="search" onClick={() => this.saveWeather()}>
               Tallenna säätieto <br/>
               <FavoriteBorderIcon id="searchbtn" fontSize="large" />
