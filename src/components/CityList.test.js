@@ -31,7 +31,3 @@ it("renders userList data", () => {
     expect(container.querySelector("[data-testid='tempTest']").textContent).toContain(fakeData[0].temp);
     expect(container.querySelector("[data-testid='cityTest']").textContent).toContain(fakeData[0].city);
   });
-
-
-
-

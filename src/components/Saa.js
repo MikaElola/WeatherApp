@@ -19,7 +19,7 @@ searchCity = (event) => {
 //tähän tehdä try catch ettei haeta tyhjää nyt breikkaa...
 searchWeather = () => {
   let serCity = this.state.userSearch
-  fetch('http://api.openweathermap.org/data/2.5/weather?q='+serCity+'&units=metric&APPID=0707345a482e92b1b0e9043d2a6df184')
+  fetch('https://api.openweathermap.org/data/2.5/weather?q='+serCity+'&units=metric&APPID=0707345a482e92b1b0e9043d2a6df184')
   .then((response) => {
   if(response.ok){
     return response.json()
